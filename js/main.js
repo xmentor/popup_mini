@@ -1,4 +1,4 @@
-function loadCSS(filename) {
+/*function loadCSS(filename) {
     'use strict';
     var newElement = document.createElement("link");
     newElement.setAttribute("rel", "stylesheet");
@@ -9,7 +9,7 @@ function loadCSS(filename) {
         window.console.log("Load file: " + filename + " - FAIL");
     }
 }
-loadCSS("css/style.css");
+loadCSS("css/style.css");*/
     
 function PopUpNew(time) {
     'use strict';
