@@ -19,10 +19,16 @@ function PopUpNew(time) {
 PopUpNew.prototype = {
     Create: function () {
         'use strict';
-        setTimeout(function () {
-            document.querySelector(".container-popup").classList.add("fade-in");
-        }, this.time);
-        this.Delete();
+        localStorage.setItem("displayed", ""); // test
+        if (localStorage.getItem("displayed") === "") {
+            setTimeout(function () {
+                localStorage.setItem("displayed", true);
+                document.querySelector(".container-popup").classList.add("fade-in");
+            }, this.time);
+            this.Delete();
+        } else {
+            document.querySelector(".container-popup").remove();
+        }
     },
     Delete: function () {
         'use strict';
