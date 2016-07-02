@@ -11,18 +11,21 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.6.1/less.min.js"></script>-->
     </head>
     <body>
-        <div class="container-popup">
-            <a href="#" class="close-popup" id="close-popup" title="Close window">x</a>
-            <h2 class="title-popup">PopUp</h2>
-            <div class="content-popup">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <div class="main-page">
+            <div class="container-popup">
+                <a href="#" class="close-popup" id="close-popup" title="Close window">x</a>
+                <h2 class="title-popup">PopUp</h2>
+                <div class="content-popup">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
             </div>
+            <button class="show-popup">Pokaz PopUp</button>
         </div>
         <script src="js/main.js"></script>
-        <script>new PopUpNew(5000);</script>
+        <script>new PopUpNew(5000, true);</script>
     </body>
 </html>

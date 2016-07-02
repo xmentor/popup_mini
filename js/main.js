@@ -11,29 +11,42 @@
 }
 loadCSS("css/style.css");*/
     
-function PopUpNew(time) {
+function PopUpNew(time, click_bool) {
     'use strict';
     this.time = time;
-    this.Create();
+    this.click_bool = click_bool;
+    this.init();
 }
 PopUpNew.prototype = {
-    Create: function () {
+    not_click: function () {
         'use strict';
-        localStorage.setItem("displayed", ""); // test
-        if (localStorage.getItem("displayed") === "") {
-            setTimeout(function () {
-                localStorage.setItem("displayed", true);
-                document.querySelector(".container-popup").classList.add("fade-in");
-            }, this.time);
-            this.Delete();
-        } else {
-            document.querySelector(".container-popup").remove();
-        }
+        setTimeout(function () {
+            document.querySelector(".container-popup").classList.add("fade-in");
+        }, this.time);
+        this.Delete();
     },
     Delete: function () {
         'use strict';
         document.getElementById("close-popup").addEventListener("click", function () {
-            this.parentNode.remove();
+            this.parentNode.classList.remove("fade-in");
         }, false);
+    },
+    click: function () {
+        'use strict';
+        var show_popUp = document.querySelectorAll(".show-popup");
+        for (var popUp of show_popUp) {
+            popUp.addEventListener("click", function () {
+                document.querySelector(".container-popup").classList.add("fade-in");
+            }, false);
+        }
+        this.Delete();
+    },
+    init: function () {
+        'use strict';
+        if (this.click_bool) {
+           this.click(); 
+        } else {
+            this.not_click(); 
+        }
     }
 };
