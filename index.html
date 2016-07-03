@@ -22,8 +22,15 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
         </div>
-        <button class="show-popup">Pokaz PopUp</button>
+        <button class="click-popup">Pokaz PopUp</button>
         <script src="js/main.js"></script>
-        <script>new PopUpNew(5000, true);</script>
+        <script>
+            //new PopUpNew(5000, true);
+            PopUpNew.init({
+                delaytime: 1, // set the time only if click is set to false
+                click: true // if click is set to true, delaytime is unnecessary
+            });
+            
+        </script>
     </body>
 </html>

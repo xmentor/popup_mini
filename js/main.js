@@ -10,19 +10,24 @@
     }
 }
 loadCSS("css/style.css");*/
-    
+/*  
 function PopUpNew(time, click_bool) {
     'use strict';
     this.time = time;
     this.click_bool = click_bool;
     this.init();
 }
-PopUpNew.prototype = {
+*/
+var PopUpNew = {
+    options: {
+        delaytime: 500, // only if click is set to false
+        click: false
+    },
     not_click: function () {
         'use strict';
         setTimeout(function () {
             document.querySelector(".container-popup").classList.add("fade-in");
-        }, this.time);
+        }, PopUpNew.options.delaytime);
         this.Delete();
     },
     Delete: function () {
@@ -33,7 +38,7 @@ PopUpNew.prototype = {
     },
     click: function () {
         'use strict';
-        var show_popUp = document.querySelectorAll(".show-popup");
+        var show_popUp = document.querySelectorAll(".click-popup");
         for (var popUp of show_popUp) {
             popUp.addEventListener("click", function () {
                 document.querySelector(".container-popup").classList.add("fade-in");
@@ -41,9 +46,10 @@ PopUpNew.prototype = {
         }
         this.Delete();
     },
-    init: function () {
+    init: function (e) {
         'use strict';
-        if (this.click_bool) {
+        for (var i in e) PopUpNew.options[i] = e[i];
+        if (PopUpNew.options.click) {
            this.click(); 
         } else {
             this.not_click(); 
