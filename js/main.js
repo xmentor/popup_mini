@@ -27,7 +27,7 @@ var PopUpNew = {
         'use strict';
         setTimeout(function () {
             document.querySelector(".container-popup").classList.add("fade-in");
-        }, PopUpNew.options.delaytime);
+        }, this.options.delaytime);
         this.Delete();
     },
     Delete: function () {
@@ -48,8 +48,8 @@ var PopUpNew = {
     },
     init: function (e) {
         'use strict';
-        for (var i in e) PopUpNew.options[i] = e[i];
-        if (PopUpNew.options.click) {
+        for (var i in e) this.options[i] = e[i];
+        if (this.options.click) {
            this.click(); 
         } else {
             this.not_click(); 
